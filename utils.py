@@ -43,7 +43,7 @@ def summarizer(pdf):
 
         if query:
             docs = knowledgeBase.similarity_search(query)
-            OpenAIModel = "gpt-3.5-turbo-16k"
+            OpenAIModel = "gpt-4o-mini"
             llm = ChatOpenAI(model=OpenAIModel, temperature=0.1)
             chain = load_qa_chain(llm, chain_type='stuff')
 
