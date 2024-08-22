@@ -1,5 +1,4 @@
 from langchain.text_splitter import CharacterTextSplitter
-# import langchain_huggingface.HuggingFaceEmbeddings
 from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 from langchain import FAISS
 from langchain.chains.question_answering import load_qa_chain
@@ -39,7 +38,7 @@ def summarizer(pdf):
             text += page.extract_text() or ""
         
         knowledgeBase = process_text(text)
-        query = "Summary the content of the upladed PDF file in about 100 words."
+        query = "Summary the content of the uploaded PDF file in about 100 words."
 
         if query:
             docs = knowledgeBase.similarity_search(query)
